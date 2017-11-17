@@ -18,13 +18,16 @@ class EventsManager {
           type: 'GET',
           success: (data) =>{
             if (data.msg=="OK") {
-              this.poblarCalendario(data.eventos)
+              this.poblarCalendario(JSON.parse(data.eventos))
             }else {
               alert(data.msg)
               window.location.href = 'index.html';
             }
           },
-          error: function(){
+          error: function(a,b,c){
+            console.log(a);
+            console.log(b);
+            console.log(c);
             alert("error en la comunicación con el servidor");
           }
         })
