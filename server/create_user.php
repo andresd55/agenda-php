@@ -15,6 +15,15 @@ include_once("encript.php");
         $datetime = date('Y-m-d H:i:s',$datetime);
         $result = mysqli_query($mysqli, "INSERT INTO usuario(correo,nombre,apellido,password,fecha_nacimiento) VALUES('$email','$nombre','$apellido','$password','$datetime');");
     }
+    if($result){
+        echo "usuarios creados correctamente";
+    }else
+    {
+        $r=[];
+        $r["msg"] = "error";
+        $r["error"] =mysqli_error($mysqli);
 
-    echo "datos creados correctamente";
+        echo json_encode($r);
+    }
+
  ?>

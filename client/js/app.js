@@ -109,14 +109,15 @@ class EventsManager {
                 end: $('#end_date').val()+" "+$('#end_hour').val()
               })
             }
+
+
+
+
           }else {
             alert(data.msg)
           }
         },
         error: function(request, status, error){
-          console.log(request);
-          console.log(status);
-          console.log(error);
           alert("error en la comunicación con el servidor");
         }
       })
@@ -143,9 +144,6 @@ class EventsManager {
           }
         },
         error: function(request, status, error){
-            console.log(request);
-            console.log(status);
-            console.log(error);
           alert("error en la comunicación con el servidor");
         }
       })
@@ -190,7 +188,7 @@ class EventsManager {
               alert(data.msg)
             }
           },
-          error: function(){
+          error: function(request, status, error){
             alert("error en la comunicación con el servidor");
           }
         })
